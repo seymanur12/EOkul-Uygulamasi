@@ -1,0 +1,99 @@
+﻿<Window x:Class="eokuluyg.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:eokuluyg"
+        
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+
+    <!--Sekme Menüsü  :     -->
+    <TabControl
+  Style="{StaticResource MaterialDesignNavigatilRailTabControl}"
+  materialDesign:ColorZoneAssist.Mode="PrimaryMid"
+  TabStripPlacement="Left"
+        
+  materialDesign:NavigationRailAssist.SelectionCornerRadius="20 0 0 20"
+  materialDesign:NavigationRailAssist.ShowSelectionBackground="True">
+
+        <!-- Her bir TabItem'in   Header'ı var: burda Menü resmi , Menü yazısı var  -->
+        <!--         TabItem'in   TextBlock   içinde Menüye tıklayınca açılcak sayfanın içeriği var. -->
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel     Margin="5 0 5 0">
+                    <materialDesign:PackIcon   
+                        Kind="BadgeAccountHorizontalOutline" 
+                        Width="24"
+                        Height="24"
+                        HorizontalAlignment="Center" />
+                    <TextBlock HorizontalAlignment="Center" Text="Not" Margin="0" />
+                    <TextBlock HorizontalAlignment="Center"  Text="İşlemleri" Margin="0"/>
+                </StackPanel>
+            </TabItem.Header>
+          
+            <local:Notİslemleri/>
+
+
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <!-- Menünün Resmi   -->
+                <StackPanel
+        Height="auto"
+        Width="auto">
+                    <materialDesign:PackIcon
+          Kind="AccountBox"
+          Width="24"
+          Height="24"
+          HorizontalAlignment="Center" />
+                    <!-- TextBlock( menünün yazısı)     Öğrenci , İşlemleri    -->
+                    <TextBlock
+          Text="Öğrenci"
+          HorizontalAlignment="Center" />
+                    <TextBlock
+          Text="İşlemleri"
+          HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            
+            <!-- local:   -->
+            <local:Ogrenciİslemleri/>
+            
+        </TabItem>
+        <TabItem>
+            <TabItem.Header>
+                <StackPanel
+        Height="auto"
+        Width="auto">
+                    <materialDesign:PackIcon
+          Kind="MicrosoftXboxControllerMenu"
+          Width="24"
+          Height="24"
+          HorizontalAlignment="Center" />
+                    <!-- TextBlock( menünün yazısı)     Ders  , İşlemleri    -->
+                    <TextBlock
+          Text="Ders"
+          HorizontalAlignment="Center" />
+                    <TextBlock
+          Text="İşlemleri"
+          HorizontalAlignment="Center" />
+                </StackPanel>
+            </TabItem.Header>
+            
+            <!-- local:   -->
+            <local:DersIslemleri/>
+            
+        </TabItem>
+
+    </TabControl>
+</Window>

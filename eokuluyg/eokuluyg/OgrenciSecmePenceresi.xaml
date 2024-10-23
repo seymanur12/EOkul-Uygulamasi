@@ -1,0 +1,38 @@
+﻿<Window x:Class="eokuluyg.OgrenciSecmePenceresi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:eokuluyg"
+        mc:Ignorable="d"
+        Title="OgrenciSecmePenceresi" Height="450" Width="800">
+    
+    <GroupBox   Grid.Row="0" Grid.Column="0"
+                    Header="Öğrenci Seçme"
+                    Margin="5"
+                    >
+        <StackPanel  Margin="5"  >
+            <Label Content="Ad " Margin="0 -5 0 -4" />
+            <TextBox Name="txtAd" Cursor="Arrow"  TextChanged="txtAd_TextChanged" />
+            <!--                                  TextChanged=  bu fonksiyon   tetiklencek   
+            
+            -->
+                <Label Content="Soyad " Margin="0 0 0 -4" />
+            <TextBox Name="txtSoyad" TextChanged="txtSoyad_TextChanged" />
+                    
+            <Label Content="Okul No" Margin="0 10 0 -4" />
+            <TextBox Name="txtOkulNo" TextChanged="txtOkulNo_TextChanged" />
+
+            <!--  Yukrdaki    Ad    Soyad   OkulNo   İNPUT alanlarına   
+            Yazılan öğrenciler    aşağıdaki   ListBox'da    listelencek 
+            ____________________________________________________________
+            Eğer            OkulNo    girildiyse   Ad   SOyad   İNPUT'larına  hiç bakmıcak. 
+            ____________________________________________________________
+            Eğer            OkulNo    boş ise     Ad  ve SOyad ile arama yapabilcek. -->
+                <ListBox Name="lstOgrenciler" Height="130"/>
+            <Button   x:Name="btn"  Margin="3,3,3,3" Click="btn_Click"  >Önceki Sayfaya Dön</Button>
+        </StackPanel>
+    </GroupBox>
+
+
+</Window>
